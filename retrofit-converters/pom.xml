@@ -20,6 +20,7 @@
     <module>protobuf</module>
     <module>jackson</module>
     <module>java8</module>
+    <module>jaxb</module>
     <module>wire</module>
     <module>simplexml</module>
     <module>scalars</module>
