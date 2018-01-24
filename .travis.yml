@@ -1,25 +1,12 @@
 language: java
-
-jdk:
-  - oraclejdk8
-
+install:
+- bash install.sh
+script:
+- bash test.sh
+before_script:
+- bash pull.sh
 after_success:
-  - .buildscript/deploy_snapshot.sh
-
+- bash push.sh
 env:
   global:
-    - secure: "M0bjPTMwinz0uXN6qjXcpyfvhz/YX9W7ty4RdV90jMU8ZJxSdGdKXRy1N0TsMO8ciOQ2fryE/FpiX+arrphnVvqUmGBh386lGvj1rhgrVqXNqlGE23cQpzHsQ0nNqTGIxnoE4dmJF3PjWoYG+B4WbFsSb3PB7sEjpLq7klqGeHk="
-    - secure: "iL5BdYAmMaEDRKxNx1d9Zxn0tfJhCzXBGUvn+p7QGeQDUSVCdCc8cXS4ePbRj0401pK20nK1OouIi0lLP+z0QpZY6RrKIEncGOZeSFPQbS/vnZ7niCYJQdXCZ/GOlYUkAW2AsQl5bzzHYbHKX/TVgTuO3iFlbyeoZZuIjD3VaiM="
-
-branches:
-  except:
-    - gh-pages
-
-notifications:
-  email: false
-
-sudo: false
-
-cache:
-  directories:
-    - $HOME/.m2
+    secure: e75telbxy9FUjjRamfOPqj8FzJ6TQUobZRqmFGn5O6Mwplgr5TlCWiMkUs1fTp+pPzfuTHtoxeXCyTFtXDmhIqc7z9cjhIydYVNlLvKM8d8Ytfh+rxA3C3aKX26zUM+cCx+U+HCBlLxjbrwTa9+G/Anz3EeLOiQ92JKaNfx/iTdk20RLtrCP5SQnrqD1NyhA8IIK+iZfzBFR2kYgwcagFz7fou8oi0UaIIYd875DEF+uruuU4cCxOh0xxddCjWRaPSr8+RXMLWxEqk3bxIOok9Ge1Lt5PYlaEc/J0jEemjB+c9crdLepKl3cyInC9O1TGbitXBhte+ynzTlRpumsbC/5I+kV0X6U+fNtJ/ZmOQTibfldBW3XtuBVoDtoTJFH+Cc7/w88DG4m/DY59I/sG3xc0DyU76O5HKu3cBvQz/zfBrc2s9tN/pPweiQFmZCQI+kVuw2KQdm4T9iQyb/Qubyiq4O4Nx6FQ32v1CzLPeubrbKyG+7QVgejL8AFH+GtYlelWA6roAcECxTOCqBu+8wSNXHNpgON8nKYzRx0e0eSXNdk60KlMJaMs08O4h5kVv+YIi6t1iMdiBfJRxCsv/bW5gMSSOFTV9jcwfTbsGHOXxiwkmwIZEPavqKWr3YSauGPjoz6ptlGPJSHDkdB1zB3QEw6BbfOBfzbbLDSuq0=
